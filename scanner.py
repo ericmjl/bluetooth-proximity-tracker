@@ -24,13 +24,13 @@ success = [
     ]
 
 no_devices = [
-    X, O, X, X, O, X, X, O,
-    X, O, X, X, X, O, O, X,
-    X, X, O, X, X, O, O, X,
     X, O, O, X, O, X, X, O,
-    X, O, O, O, O, O, O, O,
-    X, O, O, O, O, O, O, O,
-    X, O, O, O, O, O, O, O,
+    X, X, O, X, X, O, O, X,
+    X, O, X, X, X, O, O, X,
+    X, O, O, X, O, X, X, O,
+    O, O, O, O, O, O, O, O,
+    O, O, O, O, O, O, O, O,
+    O, O, O, O, O, O, O, O,
     O, O, O, O, O, O, O, O 
 ]
 
@@ -43,10 +43,10 @@ while not exit:
         for device in nearby_devices:
             if "Eric's iPhone 6+" in device[1]:
                 # sense.show_message(device[1])
-                # sense.set_pixels(success)
-                sense.show_message('In range')
+                sense.set_pixels(success)
+                # sense.show_message('In range')
     else:
         # for i in range(10):
         #    time.sleep(0.5)
-        # sense.set_pixels(no_devices)
-        sense.show_message('Out of range')
+        sense.set_pixels(no_devices)
+        # sense.show_message('Out of range')
