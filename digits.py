@@ -35,3 +35,25 @@ two = [
     O, O, O, G, O, O, O, O,
     O, O, G, G, G, G, O, O
     ]
+
+three = [
+    O, O, O, G, G, O, O, O,
+    O, O, G, O, O, G, O, O,
+    O, O, O, O, O, G, O, O,
+    O, O, O, O, G, O, O, O,
+    O, O, O, O, O, G, O, O,
+    O, O, G, O, O, G, O, O,
+    O, O, O, G, G, O, O, O,
+    O, O, O, O, O, O, O, O
+    ]
+
+four = [
+    O, O, O, O, G, O, O, O,
+    O, O, O, G, O, O, O, O,
+    O, O, G, O, G, O, O, O,
+    O, G, G, G, G, G, O, O,
+    O, O, O, O, G, O, O, O,
+    O, O, O, O, G, O, O, O,
+    O, O, O, O, G, O, O, O,
+    O, O, O, O, G, O, O, O
+    ]
