@@ -35,8 +35,8 @@ no_devices = [
 ]
 
 while not exit:
-    nearby_devices = bluetooth.discover_devices(lookup_names=True, duration=2)
-    
+    nearby_devices = bluetooth.discover_devices(lookup_names=True, duration=10)
+    print(nearby_devices)
     if nearby_devices:
         # for i in range(10):
             # time.sleep(0.5)
@@ -45,8 +45,13 @@ while not exit:
                 # sense.show_message(device[1])
                 sense.set_pixels(success)
                 # sense.show_message('In range')
+            else:
+                sense.show_message('{0} devices.'.format(len(nearby_devices)))
     else:
         # for i in range(10):
         #    time.sleep(0.5)
         sense.set_pixels(no_devices)
         # sense.show_message('Out of range')
+        # time.sleep(2)
+        # print(nearby_devices)
+        sense.show_message('{0} devices.'.format(len(nearby_devices)))
