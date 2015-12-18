@@ -1,8 +1,7 @@
 from bluetooth.ble import DiscoveryService, BeaconService
+from datetime import datetime, date
 
-# service = DiscoveryService()
-# devices = service.discover(2)
-# print(devices)
+import os
 
 class Beacon(object):
     def __init__(self, data, address):
@@ -16,16 +15,21 @@ class Beacon(object):
     def __str__(self):
         return '{0}, RSSI: {1}'.format(self._address, self._rssi)
 
+datadir = '/home/pi/data'
+beacon_service = BeaconService()
+
 while True:
 
-    beacon_service = BeaconService()
     devices = beacon_service.scan(10)
     
     if devices:
+        with open('/home/pi/data/data.txt', 'a+') as f:
+        
+            for address, data in devices.items():
+                b = Beacon(data, address)
+                print(b)
+                dt = datetime.now()
+                f.write('{0},{1},{2},{3},{4},{5},{6},{7}\n'.format(b._address, b._rssi, dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second))
 
-        for address, data in devices.items():
-            b = Beacon(data, address)
-            print(b)
- 
     else:
         print('no devices')
