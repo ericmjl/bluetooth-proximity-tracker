@@ -20,7 +20,7 @@ beacon_service = BeaconService()
 
 while True:
 
-    devices = beacon_service.scan(10)
+    devices = beacon_service.scan(30)
     
     if devices:
         with open('/home/pi/data/data.txt', 'a+') as f:
